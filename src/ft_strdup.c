@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tguimara <tguimara>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:42:51 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/21 14:42:51 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/05/25 22:46:41 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,22 @@
 #include <stdlib.h>
 #include "../include/libft.h"
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-	char *ptr;
-	size_t s_len;
+	int		i;
+	char	*ptr;
+	size_t	s_len;
 
 	s_len = ft_strlen(s);
-	ptr = malloc(s_len);
+	ptr = malloc(s_len + 1);
 	if (ptr == NULL)
-		return NULL;
-	else
-		ft_strlcpy(ptr, s, s_len);
-	return (ptr);	
+		return (NULL);
+	i = 0;
+	while (*(s + i) != '\0')
+	{
+		*(ptr + i) = *(s + i);
+		i++;
+	}
+	*(ptr + i) = '\0';
+	return (ptr);
 }

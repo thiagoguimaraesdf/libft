@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+         #
+#    By: tguimara <tguimara>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 17:30:09 by tguimara          #+#    #+#              #
-#    Updated: 2021/05/18 17:30:09 by tguimara         ###   ########.fr        #
+#    Updated: 2021/05/25 23:59:45 by tguimara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,6 @@ clean:
 	@rm -f $(OBJECTS)
 
 fclean: clean
-	@rm -f $(NAME) *.exe
-
-run:
-	@gcc -Wall -Wextra -Werror ./tests/$(ARGS).c -o $(ARGS) -L. $(NAME) -I./include && ./$(ARGS).exe
+	@rm -f $(NAME) *.o
 
 re: fclean all

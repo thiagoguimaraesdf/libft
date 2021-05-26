@@ -14,11 +14,11 @@
 #include <stdlib.h>
 #include "../include/libft.h"
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char *ptr;
+	char	*ptr;
 
 	ptr = malloc(size * nmemb);
 	memset(ptr, 0, size * nmemb);
-    return ptr;
+	return (ptr);
 }
