@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 17:24:45 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/25 23:11:29 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/05/26 09:24:19 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 # include <string.h>
 
-void    ft_bzero(void *s, size_t n);
+void        ft_bzero(void *s, size_t n);
 void        *ft_memset(void *s, int c, size_t n);
 void        *ft_memcpy(void *restrict dest, const void *restrict src, size_t n);
 void        *ft_memccpy(void *restrict dest, const void *restrict src, int c, size_t n);
@@ -38,5 +38,7 @@ int         ft_toupper(int c);
 int         ft_tolower(int c);
 void        *ft_calloc(size_t nmemb, size_t size);
 char        *ft_strdup(const char *s);
+char	    *ft_substr(char const *s, unsigned int start, size_t len);
+char        *ft_strjoin(char const *s1, char const *s2);
 
 #endif
