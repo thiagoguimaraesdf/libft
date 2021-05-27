@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tguimara <tguimara>                        +#+  +:+       +#+        */
+/*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 17:24:45 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/26 09:24:19 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/05/26 22:28:32 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,8 @@ void        *ft_calloc(size_t nmemb, size_t size);
 char        *ft_strdup(const char *s);
 char	    *ft_substr(char const *s, unsigned int start, size_t len);
 char        *ft_strjoin(char const *s1, char const *s2);
+char        *ft_strtrim(char const *s1, char const *set);
+char        **ft_split(char const *s, char c);
+
 
 #endif

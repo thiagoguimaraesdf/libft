@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tguimara <tguimara>                        +#+  +:+       +#+        */
+/*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 09:25:01 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/25 22:58:08 by tguimara         ###   ########.fr       */
+/*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
+/*   Updated: 2021/05/26 22:36:34 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdlib.h>
+#include "../include/libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char    **ft_split(char const *s, char c)
 {
-	int	i;
-
-	i = 0;
-	while (i < (int)size - 1 && *(src + i) != '\0')
-	{
-		*(dst + i) = *(src + i);
-		i++;
-	}
-	if (size > 0)
-		*(dst + i) = '\0';
-	while (*(src + i) != '\0')
-		i++;
-	return ((size_t)i);
+    char    **matriz;
+    
+    matriz = malloc(3);
+    *matriz = (char *)s;
+    *(matriz + 1) = ft_strchr(s, (int)c);
+    return (matriz);
 }
