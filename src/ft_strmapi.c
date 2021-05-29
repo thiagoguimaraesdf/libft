@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 10:27:16 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/29 10:32:52 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/05/29 16:17:08 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "../include/libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
     int     i;
     char    *ptr;
@@ -23,7 +23,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
     if (ptr == NULL)
         return (NULL);
     i = 0;
-    while(*(s + i) != '\0')
+    while (*(s + i) != '\0')
     {
         *(ptr + i) = f(i, *(s + i));
         i++;

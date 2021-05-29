@@ -6,13 +6,12 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:31:42 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/20 09:31:42 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/05/29 16:18:06 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "../include/libft.h"
-#include <stdio.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
