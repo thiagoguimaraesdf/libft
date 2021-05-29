@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/26 22:36:34 by tguimara         ###   ########.fr       */
+/*   Created: 2021/05/29 15:22:57 by tguimara          #+#    #+#             */
+/*   Updated: 2021/05/29 15:24:48 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
+#include <unistd.h>
 #include "../include/libft.h"
 
-char    **ft_split(char const *s, char c)
+void ft_putnbr_fd(int n, int fd)
 {
-    char    **matriz;
-    
-    matriz = malloc(3);
-    *matriz = (char *)s;
-    *(matriz + 1) = ft_strchr(s, (int)c);
-    return (matriz);
+    char *str;
+
+    str = ft_itoa(n);
+    ft_putstr_fd(str, fd);
 }
+
