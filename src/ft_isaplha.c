@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:35:49 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/31 08:18:40 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/01 13:44:55 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	ft_isalpha(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	else if (c >= 'a' && c <= 'z')
 		return (1);
 	return (0);
 }
