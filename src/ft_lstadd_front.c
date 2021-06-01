@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 15:04:03 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/29 20:41:22 by tguimara         ###   ########.fr       */
+/*   Created: 2021/05/30 08:20:47 by tguimara          #+#    #+#             */
+/*   Updated: 2021/05/30 09:00:57 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
+#include "../include/libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	int	i;
-
-	i = 0;
-	while (*(s + i) != '\0')
+	if (lst != NULL && new != NULL)
 	{
-		write(fd, (s + i), 1);
-		i++;
+		new->next = lst[0];
+		lst[0] = new;
 	}
 }

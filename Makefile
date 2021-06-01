@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tguimara <tguimara>                        +#+  +:+       +#+         #
+#    By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 17:30:09 by tguimara          #+#    #+#              #
-#    Updated: 2021/05/25 23:59:45 by tguimara         ###   ########.fr        #
+#    Updated: 2021/05/31 22:01:57 by tguimara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ INCLUDE = libft.h
 all: $(NAME)
 
 $(NAME):
-	@gcc -c -Wall -Wextra -Werror $(SRC) -I./include $(INCLUDE)
+	@gcc -c -Wall -Wextra -Werror $(SRC) -I $(INCLUDE)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
 
