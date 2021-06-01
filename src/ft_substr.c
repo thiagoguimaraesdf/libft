@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 08:53:45 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/29 20:50:54 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/01 14:15:01 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*ptr;
 
-	ptr = malloc(len + 1);
-	if (ptr == NULL)
+	ptr = (char *)malloc(sizeof(char) * (len + 1));
+	if (ptr == NULL || s == NULL)
 		return (NULL);
 	i = 0;
 	while (i < len)
