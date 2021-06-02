@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 09:20:24 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/30 14:46:17 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/01 21:39:37 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	nextdel = *lst;
 	if (!lst || !del)
 		return ;
-	while (*lst != NULL)
+	while (lst[0]->next != NULL)
 	{
-		nextdel = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = nextdel;
+		nextdel = lst[0]->next;
+		ft_lstdelone(lst[0], del);
+		lst[0] = nextdel;
 	}
 	lst = NULL;
 }
