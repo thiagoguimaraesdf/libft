@@ -6,13 +6,11 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 09:00:09 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/29 20:45:10 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/02 09:48:13 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
 
 static	int	ft_countint(long n)
 {

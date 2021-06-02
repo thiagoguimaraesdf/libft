@@ -6,10 +6,11 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 08:20:47 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/01 21:33:21 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/02 09:49:10 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "../include/libft.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)

@@ -6,10 +6,11 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 07:57:28 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/01 15:45:46 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/02 09:48:51 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdlib.h>
 #include "../include/libft.h"
 
