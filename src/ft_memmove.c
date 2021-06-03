@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tguimara <tguimara>                        +#+  +:+       +#+        */
+/*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:08:39 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/25 22:34:13 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/03 08:34:34 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	int	i;
 
+	if (dest == NULL || src == NULL || n == NULL)
+		return (NULL);
 	if (dest < src)
 	{
 		i = 0;

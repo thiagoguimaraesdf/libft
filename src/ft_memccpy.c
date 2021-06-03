@@ -6,13 +6,13 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:05:18 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/02 14:18:13 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/02 16:47:41 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memccpy(void *restrict dest, const void *restrict src,
+void	*ft_memccpy(void dest, const void src,
 	int c, size_t n)
 {
 	size_t	i;
