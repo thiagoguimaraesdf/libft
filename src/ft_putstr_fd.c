@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 15:04:03 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 16:35:20 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 16:36:37 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	if (s == NULL)
-		return (NULL);
+		return ;
 	i = 0;
 	while (*(s + i) != '\0')
 	{
