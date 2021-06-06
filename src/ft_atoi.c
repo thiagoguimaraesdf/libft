@@ -6,9 +6,12 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:34:42 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 15:34:59 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 15:35:40 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <string.h>
+#include "../include/libft.h"
 
 int	ft_atoi(const char *str)
 {
