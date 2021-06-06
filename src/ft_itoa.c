@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 09:00:09 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/02 09:48:13 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 16:24:31 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ char	*ft_itoa(int n)
 	nb = n;
 	size = ft_countint(nb);
 	ptr = (char *)malloc(sizeof(char) * size + 1);
+	if (ptr == NULL)
+		return (NULL);
 	ptr = ft_putnbr(ptr, nb, size);
 	return (ptr);
 }
