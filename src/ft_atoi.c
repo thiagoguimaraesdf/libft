@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:34:42 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 15:40:56 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 15:41:55 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,17 @@ int	ft_atoi(const char *str)
 
 	res = 0;
 	sign = 1;
-	while (ft_check_char(str[i]) == 1)
+	while (ft_check_char(*str) == 1)
 		str++;
-	if (str[i] == '-' || str[i] == '+')
+	if (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
+		if (*str == '-')
 			sign *= -1;
 		str++;
 	}
-	while (ft_isdigit(str[i]))
+	while (ft_isdigit(*str))
 	{
-		res = res * 10 + (str[i] - 48);
+		res = res * 10 + (*str - 48);
 		str++;
 	}
 	if (res > 2147483647L && sign == 1)
