@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tguimara <tguimara>                        +#+  +:+       +#+        */
+/*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:44:51 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/25 22:40:04 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 17:13:25 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@ char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	while (*(s + i) != '\0')
 	{
-		if (*((char *)s + i) == c)
-			return ((char *)s + i);
+		if (*(s + i) == c)
+			return ((char *)(s + i));
 		i++;
 	}
-	if (*((char *)s + i) == '\0' && (char)c == '\0')
-		return ((char *)s + i);
+	if (*(s + i) == '\0' && (char)c == '\0')
+		return ((char *)(s + i));
 	return (NULL);
 }
