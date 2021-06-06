@@ -6,15 +6,13 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 17:24:45 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 17:01:41 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 17:02:53 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
-# include <stdlib.h>
-# include <unistd.h>
 
 typedef struct s_list
 {
@@ -24,9 +22,9 @@ typedef struct s_list
 
 void		ft_bzero(void *s, size_t n);
 void		*ft_memset(void *s, int c, size_t n);
-void		*ft_memcpy(void dest, const void src,
+void		*ft_memcpy(void *restrict dest, const void *restrict src,
 				size_t n);
-void		*ft_memccpy(void dest, const void src,
+void		*ft_memccpy(void *restrict dest, const void *restrict src,
 				int c, size_t n);
 void		*ft_memmove(void *dest, const void *src, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);
