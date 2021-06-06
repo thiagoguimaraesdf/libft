@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 09:16:15 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 16:12:49 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 16:15:22 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
-	size_t	s1_len;
-	size_t	s2_len;
 	char	*ptr;
 
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	ptr = malloc(s1_len + s2_len + 1);
+	ptr = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (ptr == NULL)
 		return (NULL);
 	i = 0;
