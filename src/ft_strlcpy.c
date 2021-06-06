@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tguimara <tguimara>                        +#+  +:+       +#+        */
+/*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:25:01 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/25 22:58:08 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 15:32:01 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	int	i;
 
 	i = 0;
+	if (dst == NULL || src == NULL)
+		return (0);
 	while (i < (int)size - 1 && *(src + i) != '\0')
 	{
 		*(dst + i) = *(src + i);
