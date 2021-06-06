@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 09:16:15 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 16:08:57 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 16:09:37 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	if (ptr = malloc(s1_len + s2_len + 1) == NULL)
+	ptr = malloc(s1_len + s2_len + 1);
+	if (ptr == NULL)
 		return (NULL);
 	i = 0;
 	while (*(s1 + i) != '\0')
