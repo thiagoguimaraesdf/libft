@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 15:22:57 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/29 20:43:54 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 16:39:04 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,5 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-
-	str = ft_itoa(n);
-	ft_putstr_fd(str, fd);
+	ft_putstr_fd(ft_itoa(n), fd);
 }
