@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:41:22 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 15:04:45 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 15:48:14 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	ptr = malloc(size * nmemb);
 	if (ptr == NULL)
-		return NULL;
+		return (NULL);
 	ft_memset(ptr, 0, size * nmemb);
 	return (ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:31:31 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 15:30:39 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 15:48:27 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		{
 			i++;
 			s1++;
-			s2++;			
+			s2++;
 		}
 		else
 			return ((unsigned char)(*s1) - (unsigned char)(*s2));

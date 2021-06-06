@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:34:42 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 15:43:46 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 15:48:04 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static int	ft_check_char(char c)
 		return (1);
 	return (0);
 }
-
 
 int	ft_atoi(const char *str)
 {
