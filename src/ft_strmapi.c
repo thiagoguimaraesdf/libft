@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 10:27:16 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/29 20:27:20 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 16:34:28 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*ptr;
 	int		i;
 
+	if (s == NULL || f == NULL)
+		return (NULL);
 	ptr = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (ptr == NULL)
 		return (NULL);
