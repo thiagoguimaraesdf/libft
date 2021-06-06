@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:34:42 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 15:41:55 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 15:43:46 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ static int	ft_check_char(char c)
 
 int	ft_atoi(const char *str)
 {
-	long	res;
-	int		sign;
+	unsigned long long	res;
+	int					sign;
 
 	res = 0;
 	sign = 1;
@@ -46,5 +46,5 @@ int	ft_atoi(const char *str)
 		return (-1);
 	if (res > 2147483648L && sign == -1)
 		return (0);
-	return ((int)(res * sign));
+	return (((int)res * sign));
 }
