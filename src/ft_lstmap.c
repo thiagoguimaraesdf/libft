@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 11:19:27 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 16:50:33 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 16:51:11 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
 		new_lst = new_lst->next;
 		lst = lst->next;
 	}
-	new_lst->content = f(lst->content);
-	new_lst->next = NULL;
 	return (new_lst);
 }
