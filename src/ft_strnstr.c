@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:48:03 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 15:50:50 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 15:53:22 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 
 	s2_len = ft_strlen(s2);
 	i = 0;
-	if (s2_len == 0 || s2 == NULL)
+	if (s2_len == 0)
 		return ((char *)s1);
-	else if (len == 0)
+	else if (s2_len > ft_strlen(s1))
 		return (NULL);
-	while (i < len - s2_len)
+	while (i < len - s2_len) && *(s1 + i) != '\0')
 	{
 		if (*(s1 + i) == *(s2))
 		{
