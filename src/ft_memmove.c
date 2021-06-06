@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:08:39 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/03 08:51:31 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 14:59:27 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	int	i;
 
-	if (dest == NULL || src == NULL || n == NULL)
+	if (dest == NULL || src == NULL)
 		return (NULL);
 	if (dest < src)
 	{
