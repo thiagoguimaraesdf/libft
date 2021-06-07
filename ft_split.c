@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 22:10:47 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 22:11:15 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	**ft_split(char const *s, char c)
 	if (tab != NULL)
 	{
 		*tab = NULL;
-		return (tab - ft_countwords((char *)src, c));
+		return (tab - ft_countwords((char *)s, c));
 	}
 	return (NULL);
 }
