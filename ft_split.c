@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 21:49:49 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:50:33 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static	int	ft_size(char const *s, char c)
 	return (size);
 }
 
-static	char	*ft_fillstr(char **tab, char *s, char c)
+static	char	*ft_fillstr(char **tab, char *ptr, char c)
 {
 	int	k;
 
