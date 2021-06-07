@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:31:42 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 23:37:13 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 23:39:04 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	ptr = (char *)src;
 	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(ptr);
+	src_len = ft_strlen(str);
 	i = 0;
-	if (size <= 0)
-		return (dst_len + src_len);
+	if (size < str_len)
+		return (size + src_len);
 	while (i < (int)(size - dst_len - 1) && *(ptr + i) != '\0')
 	{
 		*(dst + dst_len + i) = *(ptr + i);
@@ -33,7 +33,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	if (i <= (int)(size - dst_len - 1))
 		*(dst + dst_len + i) = '\0';
-	if (size > dst_len)
-		return (dst_len + src_len);
-	return (size + src_len);
+	return (dst_len + src_len);
 }
