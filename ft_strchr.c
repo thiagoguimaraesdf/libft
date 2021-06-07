@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:44:51 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 21:35:44 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:38:22 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (s == NULL)
-		return (NULL);
-	while (*(s) != '\0')
+	char	*ptr;
+
+	ptr = (char *)s;
+	while (*ptr != '\0')
 	{
-		if (*(s) == (char)c)
-			return ((char *)s);
-		s++;
+		if (*ptr == (char)c)
+			return (ptr);
+		ptr++;
 	}
-	if (*(s) == '\0' && (char)c == '\0')
-		return ((char *)s);
+	if (*ptr == '\0' && (char)c == '\0')
+		return (ptr);
 	return (NULL);
 }
