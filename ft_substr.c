@@ -6,11 +6,11 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 08:53:45 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 23:53:18 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 23:53:33 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ptring.h>
+#include <string.h>
 #include <stdlib.h>
 #include "libft.h"
 
