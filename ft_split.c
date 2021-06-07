@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 21:47:45 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:49:11 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,19 @@ static	int	ft_size(char const *s, char c)
 	return (size);
 }
 
-static	void	ft_fillstr(char **tab, char const *s, int i, char c)
+static	char	*ft_fillstr(char **tab, char *s, char c)
 {
 	int	k;
 
 	k = 0;
-	while (*(s + i) != c && *(s + i) != '\0')
+	while (*(s + i) != c && *(ptr) != '\0')
 	{
-		*(*(tab) + k) = *(s + i);
-		i++;
+		*(*(tab) + k) = *(ptr);
+		ptr++;
 		k++;
 	}
 	*(*(tab) + k) = '\0';
-	// return (i);
+	return (ptr);
 }
 
 char	**ft_split(char const *s, char c)
@@ -88,7 +88,7 @@ char	**ft_split(char const *s, char c)
 			return (NULL);
 		while (*(ptr) == c && *(ptr) != '\0')
 			ptr++;
-		ft_fillstr(tab, ptr, i, c);
+		ptr = ft_fillstr(tab, ptr, c);
 		tab++;
 		j++;
 	}
