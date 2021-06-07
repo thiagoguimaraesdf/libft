@@ -6,12 +6,12 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 21:19:18 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/29 16:18:22 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:12:55 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "../include/libft.h"
+#include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

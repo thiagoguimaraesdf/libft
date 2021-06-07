@@ -6,13 +6,13 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 09:20:24 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 16:49:24 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:10:19 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
-#include "../include/libft.h"
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {

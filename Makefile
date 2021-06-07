@@ -6,21 +6,21 @@
 #    By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 17:30:09 by tguimara          #+#    #+#              #
-#    Updated: 2021/06/01 18:13:32 by tguimara         ###   ########.fr        #
+#    Updated: 2021/06/06 21:19:01 by tguimara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC = ./src/ft_memset.c ./src/ft_bzero.c ./src/ft_memcpy.c ./src/ft_memccpy.c ./src/ft_memmove.c \
-./src/ft_memchr.c ./src/ft_memcmp.c ./src/ft_strlen.c ./src/ft_strlcpy.c ./src/ft_strlcat.c \
-./src/ft_strchr.c ./src/ft_strrchr.c ./src/ft_strnstr.c ./src/ft_strncmp.c ./src/ft_atoi.c \
-./src/ft_isalpha.c ./src/ft_isdigit.c ./src/ft_isalnum.c ./src/ft_isascii.c ./src/ft_isprint.c \
-./src/ft_toupper.c ./src/ft_tolower.c ./src/ft_calloc.c ./src/ft_strdup.c ./src/ft_substr.c \
-./src/ft_strjoin.c ./src/ft_strtrim.c ./src/ft_split.c ./src/ft_itoa.c ./src/ft_strmapi.c \
-./src/ft_putchar_fd.c ./src/ft_putstr_fd.c ./src/ft_putendl_fd.c ./src/ft_putnbr_fd.c
+SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
+ft_memchr.c ft_memcmp.c ft_strlen.c ft_strlcpy.c ft_strlcat.c \
+ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strncmp.c ft_atoi.c \
+ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+ft_toupper.c ft_tolower.c ft_calloc.c ft_strdup.c ft_substr.c \
+ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
+ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-SRC_BONUS = $(wildcard ./src/ft_lst*.c)
+SRC_BONUS = $(wildcard ft_lst*.c)
 
 OBJECTS = ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o \
 ft_memchr.o ft_memcmp.o ft_strlen.o ft_strlcpy.o ft_strlcat.o \
@@ -38,7 +38,7 @@ INCLUDE = libft.h
 all: $(NAME)
 
 $(NAME):
-	@gcc -c -Wall -Wextra -Werror $(SRC) -I $(INCLUDE)
+	@gcc -c -Wall -Wextra -Werror $(SRC) -I./
 	@ar rcs $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
 
@@ -49,7 +49,7 @@ fclean: clean
 	@rm -f $(NAME) *.o
 
 bonus: $(NAME)
-	@gcc -c -Wall -Wextra -Werror $(SRC_BONUS) -I $(INCLUDE)
+	@gcc -c -Wall -Wextra -Werror $(SRC_BONUS) -I./
 	@ar rcs $(NAME) $(BONUS_OBJ)
 
 re: fclean all

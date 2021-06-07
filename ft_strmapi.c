@@ -6,13 +6,13 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 10:27:16 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 16:34:28 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:12:37 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
-#include "../include/libft.h"
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

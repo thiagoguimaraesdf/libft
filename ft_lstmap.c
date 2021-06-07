@@ -6,13 +6,13 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 11:19:27 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 16:51:11 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:10:44 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
-#include "../include/libft.h"
+#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
 			void (*del)(void *))

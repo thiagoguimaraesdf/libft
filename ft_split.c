@@ -6,13 +6,13 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 16:33:17 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:11:11 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
-#include "../include/libft.h"
+#include "libft.h"
 
 static	int	ft_countwords(char const *s, char c)
 {

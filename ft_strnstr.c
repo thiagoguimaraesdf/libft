@@ -6,12 +6,12 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:48:03 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 16:13:22 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:12:44 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "../include/libft.h"
+#include "libft.h"
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {

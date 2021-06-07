@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tguimara <tguimara>                        +#+  +:+       +#+        */
+/*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:42:51 by tguimara          #+#    #+#             */
-/*   Updated: 2021/05/25 22:46:41 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:11:17 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
-#include "../include/libft.h"
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
