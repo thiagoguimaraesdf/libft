@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 21:19:18 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 23:29:20 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 23:30:26 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ static int	contains(char *str, char target)
 	while (*str)
 	{
 		if (*str == target)
-			return (TRUE);
+			return (1);
 		str++;
 	}
-	return (FALSE);
+	return (0);
 }
 
 static char	*get_f_char(char *s1, char *set)
