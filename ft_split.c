@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 21:51:56 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:52:37 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,9 @@ char	**ft_split(char const *s, char c)
 		j++;
 	}
 	if (tab != NULL)
+	{
 		*tab = NULL;
-	return (tab - wordcount);
+		return (tab - wordcount);
+	}
+	return (NULL);
 }
