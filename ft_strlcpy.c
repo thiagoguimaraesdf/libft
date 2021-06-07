@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:25:01 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 23:26:29 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 17:50:40 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	const char	*src_cpy;
-	
+
 	if (dst == NULL || src == NULL)
 		return (0);
 	src_cpy = (const char *)src;
