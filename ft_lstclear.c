@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 09:20:24 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 21:10:19 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 16:52:11 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		lst[0] = nextdel;
 		free(nextdel);
 	}
-	lst = NULL;
+	del(lst[0]->content);
+	free(lst);
 }
