@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 22:42:27 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 22:44:03 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,8 +101,7 @@ char	**ft_split(char const *s, char c)
 			ptr = ft_fillstr(tab[i], ptr, c);
 			i++;
 		}
-		tab[i] = malloc(sizeof(char) * (ft_size((ptr), c) + 1));
-		tab[i] = NULL;
+		// tab[i] = NULL;
 		return (tab);
 	}
 	return (NULL);
