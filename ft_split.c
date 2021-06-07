@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 22:44:03 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 22:48:01 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,13 @@ static int	ft_countwords(char const *s, char c)
 static int	ft_size(char const *s, char c)
 {
 	int	size;
+	int w;
 
 	size = 0;
-	while (*(s + size) != '\0' && *(s + size) != c)
+	w = 0;
+	while (*(s + w) != '\0' && *(s + w) == c)
+		w++;
+	while (*(s + size + w) != '\0' && *(s + size + w) != c)
 		size++;
 	return (size);
 }
@@ -52,6 +56,8 @@ static char	*ft_fillstr(char *tab, char *ptr, char c)
 	int	k;
 
 	k = 0;
+	while (*(ptr) == c && *(ptr) != '\0')
+		ptr++;
 	while (*(ptr) != c && *(ptr) != '\0')
 	{
 		*(tab + k) = *ptr;
@@ -93,15 +99,13 @@ char	**ft_split(char const *s, char c)
 		i = 0;
 		while (i < wordcount && tab)
 		{
-			while (*(ptr) == c && *(ptr) != '\0')
-				ptr++;
 			tab[i] = malloc(sizeof(char) * (ft_size((ptr), c) + 1));
 			if (!tab[i])
 				return (ft_malloc_error(tab));
 			ptr = ft_fillstr(tab[i], ptr, c);
 			i++;
 		}
-		// tab[i] = NULL;
+		tab[i] = NULL;
 		return (tab);
 	}
 	return (NULL);
