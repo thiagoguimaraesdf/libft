@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 22:48:01 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 22:49:57 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static int	ft_countwords(char const *s, char c)
 	sep[0] = c;
 	sep[1] = '\0';
 	p = ft_strtrim(s, sep);
+	if (p == NULL)
+		return (0);
 	words = 0;
 	if (*p == '\0')
 		return (words);
