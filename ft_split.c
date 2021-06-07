@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 22:21:05 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 22:29:04 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,16 @@ static	int	ft_size(char const *s, char c)
 
 static	char	*ft_fillstr(char *tab, char *ptr, char c)
 {
+	int	k;
+
+	k = 0;
 	while (*(ptr) != c && *(ptr) != '\0')
 	{
-		*tab = *ptr;
+		*(tab + k) = *ptr;
 		ptr++;
-		tab++;
+		k++;
 	}
-	*tab = '\0';
+	*(tab + k) = '\0';
 	return (ptr);
 }
 
@@ -84,24 +87,20 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	ptr = (char *)s;
 	wordcount = ft_countwords(ptr, c);
-	tab = (char **)malloc(sizeof(char *) * (wordcount + 1));
-	i = 0;
-	while (i < wordcount && tab)
+	if (tab = (char **)malloc(sizeof(char *) * (wordcount + 1)))
 	{
-		while (*(ptr) == c && *(ptr) != '\0')
-			ptr++;
-		tab[i] = (char *)malloc(sizeof(char) * (ft_size((ptr), c) + 1));
-		if (tab[i] == NULL)
-			return (ft_malloc_error(tab));
-		ptr = ft_fillstr(tab[i], ptr, c);
-		while (*(ptr) == c && *(ptr) != '\0')
-			ptr++;
-		i++;
-		wordcount--;
-	}
-	if (tab != NULL)
-	{
-		*tab = NULL;
+		i = 0;
+		while (i < wordcount && tab)
+		{
+			while (*(ptr) == c && *(ptr) != '\0')
+				ptr++;
+			tab[i] = (char *)malloc(sizeof(char) * (ft_size((ptr), c) + 1));
+			if (tab[i] == NULL)
+				return (ft_malloc_error(tab));
+			ptr = ft_fillstr(tab[i], ptr, c);
+			i++;
+		}
+		tab[i] = NULL;
 		return (tab);
 	}
 	return (NULL);
