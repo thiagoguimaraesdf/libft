@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 15:22:57 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 16:47:26 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 16:49:14 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,18 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	l;
 
+	if (n == 0)
+	{
+		write(fd, "0", 1);
+		return ;
+	}
 	if (n < 0)
 	{
 		write(fd, "-", 1);
 		l = n * (-1);
 	}
 	else
-	{
-		if (n == 0)
-		{
-			write(fd, "0", 1);
-			return ;
-		}
 		l = n;
-	}
 	ft_putunsgint_fd(l, fd);
 	return ;
 }
