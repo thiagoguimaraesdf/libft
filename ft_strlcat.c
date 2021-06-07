@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:31:42 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 23:40:14 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 23:41:54 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,19 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		i;
-	char	*ptr;
-	size_t	dst_len;
-	size_t	src_len;
+	size_t	count;
+	size_t	s_dst;
+	size_t	s_src;
 
-	ptr = (char *)src;
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	i = 0;
-	if (size < src_len)
-		return (size + src_len);
-	while (i < (int)(size - dst_len - 1) && *(ptr + i) != '\0')
-	{
-		*(dst + dst_len + i) = *(ptr + i);
-		i++;
-	}
-	if (i <= (int)(size - dst_len - 1))
-		*(dst + dst_len + i) = '\0';
-	return (dst_len + src_len);
+	count = 0;
+	s_dst = ft_strlen(dst);
+	s_src = ft_strlen(src);
+	if (size <= s_dst)
+		return (size + s_src);
+	while (dst[count])
+		count++;
+	while (*src && count < size - 1)
+		dst[count++] = *(src++);
+	dst[count] = '\0';
+	return (s_dst + s_src);
 }
