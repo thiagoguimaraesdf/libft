@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 21:49:11 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:49:49 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static	char	*ft_fillstr(char **tab, char *s, char c)
 	int	k;
 
 	k = 0;
-	while (*(s + i) != c && *(ptr) != '\0')
+	while (*(ptr) != c && *(ptr) != '\0')
 	{
 		*(*(tab) + k) = *(ptr);
 		ptr++;
