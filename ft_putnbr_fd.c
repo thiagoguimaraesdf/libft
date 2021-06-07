@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 15:22:57 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 16:46:14 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 16:47:26 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 
 void	ft_putunsgint_fd(unsigned int l, int fd)
 {
-	if (l >= 0)
+	if (l > 0)
+	{
 		ft_putunsgint_fd(l / 10, fd);
 		ft_putchar_fd((l % 10) + '0', fd);
+	}
 	return ;
 }
 
