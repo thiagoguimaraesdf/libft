@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 15:22:57 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 16:44:33 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 16:46:14 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ void	ft_putnbr_fd(int n, int fd)
 			return ;
 		}
 		l = n;
-		ft_putunsgint_fd(l, fd);
-		return ;
-		}
 	}
+	ft_putunsgint_fd(l, fd);
+	return ;
 }
