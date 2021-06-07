@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 21:43:44 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:44:19 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ char	**ft_split(char const *s, char c)
 	ptr = (char *)s;
 	wordcount = ft_countwords(ptr, c);
 	tab = (char **)malloc(sizeof(char *) * (wordcount + 1));
+	if (tab == NULL)
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (j < wordcount && tab)
@@ -80,6 +82,8 @@ char	**ft_split(char const *s, char c)
 		while (*(ptr + i) == c && *(ptr + i) != '\0')
 			i++;
 		*tab = (char *)malloc(sizeof(char) * (ft_size((ptr + i), c) + 1));
+		if (*tab == NULL)
+			return (NULL);
 		while (*(ptr + i) == c && *(ptr + i) != '\0')
 			i++;
 		i = ft_fillstr(tab, ptr, i, c);
