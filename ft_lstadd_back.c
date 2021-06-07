@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 08:56:33 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 16:57:32 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 16:58:24 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (lst)
 	{
-		if (*lst == NULL)
-			*lst = new;
+		if (lst[0] == NULL)
+			lst[0] = new;
 		else
 		{
-			last = ft_lstlast(*lst);
+			last = ft_lstlast(lst[0]);
 			last->next = new;
 		}
 	}
