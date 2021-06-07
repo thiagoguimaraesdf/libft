@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 21:52:37 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:58:42 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,24 +47,20 @@ static	int	ft_size(char const *s, char c)
 	return (size);
 }
 
-static	char	*ft_fillstr(char **tab, char *ptr, char c)
+static	char	*ft_fillstr(char *tab, char *ptr, char c)
 {
-	int	k;
-
-	k = 0;
 	while (*(ptr) != c && *(ptr) != '\0')
 	{
-		*(*(tab) + k) = *(ptr);
+		*tab = *ptr;
 		ptr++;
-		k++;
+		tab++;
 	}
-	*(*(tab) + k) = '\0';
+	*tab = '\0';
 	return (ptr);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		j;
 	int		wordcount;
 	char	**tab;
 	char	*ptr;
@@ -74,10 +70,7 @@ char	**ft_split(char const *s, char c)
 	ptr = (char *)s;
 	wordcount = ft_countwords(ptr, c);
 	tab = (char **)malloc(sizeof(char *) * (wordcount + 1));
-	if (tab == NULL)
-		return (NULL);
-	j = 0;
-	while (j < wordcount && tab)
+	while (wordcount > 0 && tab)
 	{
 		while (*(ptr) == c && *(ptr) != '\0')
 			ptr++;
@@ -86,9 +79,9 @@ char	**ft_split(char const *s, char c)
 			return (NULL);
 		while (*(ptr) == c && *(ptr) != '\0')
 			ptr++;
-		ptr = ft_fillstr(tab, ptr, c);
+		ptr = ft_fillstr(*tab, ptr, c);
 		tab++;
-		j++;
+		wordcount--;
 	}
 	if (tab != NULL)
 	{
