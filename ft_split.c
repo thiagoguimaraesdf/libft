@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 21:44:19 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:47:45 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static	int	ft_size(char const *s, char c)
 	return (size);
 }
 
-static	int	ft_fillstr(char **tab, char const *s, int i, char c)
+static	void	ft_fillstr(char **tab, char const *s, int i, char c)
 {
 	int	k;
 
@@ -59,34 +59,36 @@ static	int	ft_fillstr(char **tab, char const *s, int i, char c)
 		k++;
 	}
 	*(*(tab) + k) = '\0';
-	return (i);
+	// return (i);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
+	// int		i;
 	int		j;
 	int		wordcount;
 	char	**tab;
 	char	*ptr;
 
+	if (s == NULL)
+		return (NULL);
 	ptr = (char *)s;
 	wordcount = ft_countwords(ptr, c);
 	tab = (char **)malloc(sizeof(char *) * (wordcount + 1));
 	if (tab == NULL)
 		return (NULL);
-	i = 0;
+	// i = 0;
 	j = 0;
 	while (j < wordcount && tab)
 	{
-		while (*(ptr + i) == c && *(ptr + i) != '\0')
-			i++;
-		*tab = (char *)malloc(sizeof(char) * (ft_size((ptr + i), c) + 1));
+		while (*(ptr) == c && *(ptr) != '\0')
+			ptr++;
+		*tab = (char *)malloc(sizeof(char) * (ft_size((ptr), c) + 1));
 		if (*tab == NULL)
 			return (NULL);
-		while (*(ptr + i) == c && *(ptr + i) != '\0')
-			i++;
-		i = ft_fillstr(tab, ptr, i, c);
+		while (*(ptr) == c && *(ptr) != '\0')
+			ptr++;
+		ft_fillstr(tab, ptr, i, c);
 		tab++;
 		j++;
 	}
