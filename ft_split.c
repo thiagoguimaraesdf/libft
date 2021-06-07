@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 22:00:02 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 22:05:05 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,9 @@ char	**ft_split(char const *s, char c)
 		*tab = (char *)malloc(sizeof(char) * (ft_size((ptr), c) + 1));
 		if (*tab == NULL)
 			return (NULL);
+		ptr = ft_fillstr(*tab, ptr, c);
 		while (*(ptr) == c && *(ptr) != '\0')
 			ptr++;
-		ptr = ft_fillstr(*tab, ptr, c);
 		tab++;
 		wordcount--;
 	}
