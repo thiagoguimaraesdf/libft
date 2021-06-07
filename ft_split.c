@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 16:11:32 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 16:13:38 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ static int	ft_countwords(char const *s, char c)
 			words++;
 		p++;
 	}
+	if (words == 0)
+		return (1);
 	return (words);
 }
 
