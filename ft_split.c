@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 22:36:11 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 22:36:39 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	**ft_split(char const *s, char c)
 		{
 			while (*(ptr) == c && *(ptr) != '\0')
 				ptr++;
-			if ((tab[i] = (char *)malloc(sizeof(char) * (ft_size((ptr), c) + 1))))
+			if (!(tab[i] = (char *)malloc(sizeof(char) * (ft_size((ptr), c) + 1))))
 				return (ft_malloc_error(tab));
 			ptr = ft_fillstr(tab[i], ptr, c);
 			i++;
