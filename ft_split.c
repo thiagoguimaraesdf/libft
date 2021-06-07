@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 16:02:11 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 16:04:47 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,19 @@
 static int	ft_countwords(char const *s, char c)
 {
 	int		words;
-	int		i;
 	char	*p;
-	char	sep[2];
 
-	sep[0] = c;
-	sep[1] = '\0';
 	p = (char *)s;
 	words = 0;
 	if (*p == '\0')
 		return (words);
-	i = 1;
-	while (*(p + i) != '\0')
+	while (*p == c)
+		p++;
+	while (*p != '\0')
 	{
-		if (*(p + i) != c && *(p + i - 1) == c)
+		if (*p != c && *(p - 1) == c)
 			words++;
-		i++;
+		p++;
 	}
 	return (words + 1);
 }
