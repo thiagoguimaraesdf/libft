@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 22:39:47 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 22:42:27 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,83 +14,96 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static size_t	get_size(char const *s, char const *aux_s)
+static int	ft_countwords(char const *s, char c)
 {
-	size_t	size;
+	int		words;
+	int		i;
+	char	*p;
+	char	sep[2];
+
+	sep[0] = c;
+	sep[1] = '\0';
+	p = ft_strtrim(s, sep);
+	words = 0;
+	if (*p == '\0')
+		return (words);
+	i = 1;
+	while (*(p + i) != '\0')
+	{
+		if (*(p + i) != c && *(p + i - 1) == c)
+			words++;
+		i++;
+	}
+	return (words + 1);
+}
+
+static int	ft_size(char const *s, char c)
+{
+	int	size;
 
 	size = 0;
-	while (s != aux_s)
-	{
+	while (*(s + size) != '\0' && *(s + size) != c)
 		size++;
-		s++;
-	}
 	return (size);
 }
 
-static size_t	count_worlds(char const *s, char c)
+static char	*ft_fillstr(char *tab, char *ptr, char c)
 {
-	size_t	count;
+	int	k;
 
-	count = 1;
-	while (*s == c)
-		s++;
-	while (*s)
+	k = 0;
+	while (*(ptr) != c && *(ptr) != '\0')
 	{
-		if (*s == c && *(s + 1) != c && *(s + 1) != '\0')
-			count++;
-		s++;
+		*(tab + k) = *ptr;
+		ptr++;
+		k++;
 	}
-	return (++count);
+	*(tab + k) = '\0';
+	return (ptr);
 }
 
-static int	add_str(char **m, char const *s, char const *aux_s, size_t count)
+static char	**ft_malloc_error(char **tab)
 {
-	size_t	index;
-	size_t	size_str;
+	int	i;
 
-	size_str = get_size(s, aux_s);
-	if (size_str > 0)
+	i = 0;
+	while (tab[i])
 	{
-		m[count] = (char *)ft_calloc(size_str + 1, sizeof(char));
-		if (m[count])
-		{
-			index = 0;
-			while (index < size_str)
-			{
-				m[count][index] = s[index];
-				index++;
-			}
-		}
-		count++;
+		free(tab[i]);
+		i++;
 	}
-	return (count);
+	free(tab);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char const	*aux_s;
-	size_t		count;
-	char		**matrix;
+	int		wordcount;
+	int		i;
+	char	**tab;
+	char	*ptr;
 
-	if (!s)
+	if (s == NULL)
 		return (NULL);
-	aux_s = s;
-	count = 0;
-	matrix = (char **)malloc(count_worlds(s, c) * sizeof(char *));
-	if (matrix)
+	ptr = (char *)s;
+	wordcount = ft_countwords(ptr, c);
+	tab = (char **)malloc(sizeof(char *) * (wordcount + 1));
+	if (tab)
 	{
-		while (*aux_s)
+		i = 0;
+		while (i < wordcount && tab)
 		{
-			if (*aux_s == c)
-			{
-				count = add_str(matrix, s, aux_s, count);
-				s = aux_s + 1;
-			}
-			aux_s++;
+			while (*(ptr) == c && *(ptr) != '\0')
+				ptr++;
+			tab[i] = malloc(sizeof(char) * (ft_size((ptr), c) + 1));
+			if (!tab[i])
+				return (ft_malloc_error(tab));
+			ptr = ft_fillstr(tab[i], ptr, c);
+			i++;
 		}
-		if (*s != '\0')
-			add_str(matrix, s, aux_s, count++);
-		matrix[count] = NULL;
+		tab[i] = malloc(sizeof(char) * (ft_size((ptr), c) + 1));
+		tab[i] = NULL;
+		return (tab);
 	}
-	return (matrix);
+	return (NULL);
 }
