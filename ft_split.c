@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:28:11 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/06 22:13:46 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/06 22:19:34 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ static char			**ft_malloc_error(char **tab)
 char	**ft_split(char const *s, char c)
 {
 	int		wordcount;
+	int		i;
 	char	**tab;
 	char	*ptr;
 
@@ -84,23 +85,24 @@ char	**ft_split(char const *s, char c)
 	ptr = (char *)s;
 	wordcount = ft_countwords(ptr, c);
 	tab = (char **)malloc(sizeof(char *) * (wordcount + 1));
+	i = 0;
 	while (wordcount > 0 && tab)
 	{
 		while (*(ptr) == c && *(ptr) != '\0')
 			ptr++;
-		*tab = (char *)malloc(sizeof(char) * (ft_size((ptr), c) + 1));
-		if (*tab == NULL)
+		tab[i] = (char *)malloc(sizeof(char) * (ft_size((ptr), c) + 1));
+		if (tab[i] == NULL)
 			return (ft_malloc_error(tab));
-		ptr = ft_fillstr(*tab, ptr, c);
+		ptr = ft_fillstr(tab[i], ptr, c);
 		while (*(ptr) == c && *(ptr) != '\0')
 			ptr++;
-		tab++;
+		i++;
 		wordcount--;
 	}
 	if (tab != NULL)
 	{
 		*tab = NULL;
-		return (tab - ft_countwords((char *)s, c));
+		return (tab);
 	}
 	return (NULL);
 }
