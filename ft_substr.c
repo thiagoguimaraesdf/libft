@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 08:53:45 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 22:50:07 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:51:32 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	s_len;
 	char			*ptr;
 
+	s_len = ft_strlen(s);
 	if (s == NULL || start >= s_len)
 		return (NULL);
-	s_len = ft_strlen(s);
 	ptr = NULL;
 	ptr = ft_secure_malloc(ptr, start, s_len, len);
 	if (ptr == NULL)
