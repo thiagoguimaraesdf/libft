@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 08:53:45 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 22:46:15 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:47:10 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static char	*ft_secure_malloc(char *ptr, size_t start, unsigned int s_len, size_
 		ptr = malloc(sizeof(char) * (len + 1));
 	if (ptr == NULL)
 		return (NULL);
+	return (ptr);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
