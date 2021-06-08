@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:50:52 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 17:51:05 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 21:51:49 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,26 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static int	ft_countwords(char const *s, char c)
+#include <unistd.h>
+
+static int	ft_countwords(char *p, char c)
 {
 	int		words;
-	char	*p;
+	int		i;
 
-	p = (char *)s;
 	words = 0;
-	while (*p == c & *p != '\0')
-		p++;
-	if (*p == '\0')
+	i = 0;
+	while (*(p + i) == c && *(p + i) != '\0')
+		i++;
+	if (*(p + i) == '\0')
 		return (words);
-	while (*p != '\0')
+	while (*(p + i) != '\0')
 	{
-		if (*p != c && *(p - 1) == c)
+		if (i == 0 && *(p + i) != c)
 			words++;
-		p++;
+		if (i > 0 && *(p + i) != c && *(p + i - 1) == c)
+			words++;
+		i++;
 	}
 	if (words == 0)
 		return (1);
