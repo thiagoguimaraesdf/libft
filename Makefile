@@ -6,7 +6,7 @@
 #    By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 17:30:09 by tguimara          #+#    #+#              #
-#    Updated: 2021/06/06 21:19:01 by tguimara         ###   ########.fr        #
+#    Updated: 2021/06/07 21:56:31 by tguimara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o \
 ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
 
 BONUS_OBJ = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o \
-ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o
+ft_lstdelone.o ft_lstclear.o ft_lstiter.o
 
 INCLUDE = libft.h
 
