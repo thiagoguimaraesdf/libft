@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 08:53:45 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 22:56:35 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:57:26 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (ptr == NULL)
 		return (NULL);
 	j = 0;
-	if (start >= s_len)
+	if (start < s_len)
 	{
 		while (len > 0 && s[start] != '\0')
 		{
