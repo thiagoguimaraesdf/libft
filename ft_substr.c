@@ -6,13 +6,25 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 08:53:45 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 22:34:48 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:42:18 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
 #include "libft.h"
+
+static char	*ft_secure_malloc(char *ptr)
+{
+	if (start > s_len)
+		ptr = NULL;
+	else if (len > s_len - start)
+		ptr = malloc(sizeof(char) * (s_len - start + 1));
+	else
+		ptr = malloc(sizeof(char) * (len + 1));
+	if (ptr == NULL)
+		return (NULL);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -23,22 +35,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (s == NULL)
 		return (NULL);
 	s_len = ft_strlen(s);
-	if (len > s_len - start)
-		ptr = malloc(sizeof(char) * (s_len - start + 1));
-	else
-		ptr = malloc(sizeof(char) * (len + 1));
+	ptr = ft_secure_malloc(ptr);
 	if (ptr == NULL)
 		return (NULL);
 	j = 0;
-	if (start < s_len)
+	while (len > 0 && s[start] != '\0')
 	{
-		while (len > 0 && s[start] != '\0')
-		{
-			ptr[j] = s[start];
-			j++;
-			start++;
-			len--;
-		}
+		ptr[j] = s[start];
+		j++;
+		start++;
+		len--;
 	}
 	ptr[j] = '\0';
 	return (ptr);
