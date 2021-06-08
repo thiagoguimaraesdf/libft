@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 08:53:45 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 23:01:02 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 23:01:41 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static char	*ft_secure_malloc(char *ptr, size_t start, unsigned int s_len, size_t len)
+static char	*ft_secure_malloc(char *ptr, size_t start,
+		unsigned int s_len, size_t len)
 {
 	if (start >= s_len)
 		ptr = malloc(sizeof(char) * 1);
