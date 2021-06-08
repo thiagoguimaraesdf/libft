@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 08:53:45 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 22:57:26 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 23:00:37 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 
 static char	*ft_secure_malloc(char *ptr, size_t start, unsigned int s_len, size_t len)
 {
-	if (len > s_len - start)
+	if (start >= s_len)
+		ptr = malloc(sizeof(char) * 1));
+	else if (len > s_len - start)
 		ptr = malloc(sizeof(char) * (s_len - start + 1));
 	else
 		ptr = malloc(sizeof(char) * (len + 1));
