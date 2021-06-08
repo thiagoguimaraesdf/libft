@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 21:19:18 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 17:50:27 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:10:26 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*new_str;
 	int		index;
 
-	if (!s1 || !set)
+	if (s1 == NULL || set == NULL)
 		return (NULL);
 	f_char = get_f_char((char *)s1, (char *)set);
 	l_char = get_l_char((char *)&s1[ft_strlen(s1) - 1], (char *)set, f_char);

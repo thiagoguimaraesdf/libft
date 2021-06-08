@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 08:53:45 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 15:59:24 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:17:08 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,43 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static char	*get_newstr(unsigned int start, size_t size_s, size_t len)
+static char	*ft_substr_aux(size_t s_len, unsigned int start, size_t len)
 {
-	char	*new_str;
-	size_t	last_index;
+	char	*ptr;
+	size_t	j;
 
-	if (start > size_s)
-		last_index = 0;
-	else if (size_s - start < len)
-		last_index = size_s - start;
+	if (start > s_len)
+		j = 0;
+	else if (s_len - start < len)
+		j = s_len - start;
 	else
-		last_index = len;
-	new_str = ft_calloc(last_index + 1, sizeof(char));
-	if (new_str)
-		new_str[last_index] = 0;
-	return (new_str);
+		j = len;
+	ptr = ft_malloc(sizeof(char) * (j + 1));
+	if (ptr != NULL)
+		*(ptr + j) = 0;
+	return (ptr);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	count;
-	size_t	size_s;
-	char	*new_str;
+	size_t	i;
+	size_t	s_len;
+	char	*ptr;
 
-	if (!s)
+	if (s == NULL)
 		return (NULL);
-	size_s = ft_strlen(s);
-	new_str = get_newstr(start, size_s, len);
-	if (new_str)
+	ptr = ft_substr_aux(start, s_len, len);
+	if (ptr == NULL)
+		return (ptr);
+	s_len = ft_strlen(s);
+	i = 0;
+	if (start <= ft_strlen(s))
 	{
-		count = 0;
-		if (start <= ft_strlen(s))
+		while (i < len && *(s + start + i))
 		{
-			while (count < len && s[start + count])
-			{
-				new_str[count] = s[start + count];
-				count++;
-			}
+			*(ptr + i) = *(s + start + i);
+			i++;
 		}
 	}
-	return (new_str);
+	return (ptr);
 }
