@@ -6,7 +6,7 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 08:53:45 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 22:47:10 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:50:07 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,10 @@
 
 static char	*ft_secure_malloc(char *ptr, size_t start, unsigned int s_len, size_t len)
 {
-	if (start > s_len)
-		return (NULL);
-	else if (len > s_len - start)
+	if (len > s_len - start)
 		ptr = malloc(sizeof(char) * (s_len - start + 1));
 	else
 		ptr = malloc(sizeof(char) * (len + 1));
-	if (ptr == NULL)
-		return (NULL);
 	return (ptr);
 }
 
@@ -33,7 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	s_len;
 	char			*ptr;
 
-	if (s == NULL)
+	if (s == NULL || start >= s_len)
 		return (NULL);
 	s_len = ft_strlen(s);
 	ptr = NULL;
