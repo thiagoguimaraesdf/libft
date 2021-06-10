@@ -6,12 +6,12 @@
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:25:01 by tguimara          #+#    #+#             */
-/*   Updated: 2021/06/07 17:50:40 by tguimara         ###   ########.fr       */
+/*   Updated: 2021/06/09 21:34:05 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <libft.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
