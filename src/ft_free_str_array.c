@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_free_str_array.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tguimara <tguimara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 14:42:51 by tguimara          #+#    #+#             */
-/*   Updated: 2021/09/16 22:59:19 by tguimara         ###   ########.fr       */
+/*   Created: 2021/09/21 14:43:08 by tguimara          #+#    #+#             */
+/*   Updated: 2021/09/21 22:24:23 by tguimara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdlib.h>
 #include "../include/libft.h"
 
-char	*ft_strdup(const char *s)
-{
-	int		i;
-	char	*ptr;
-	size_t	s_len;
 
-	s_len = ft_strlen(s);
-	ptr = malloc(s_len + 1);
-	if (ptr == NULL)
-		return (NULL);
-	i = 0;
-	while (*(s + i) != '\0')
+#include <stdio.h>
+
+void 	ft_free_str_array(char **str_array)
+{
+	if (!(str_array))
+		return ;
+	while (str_array && *str_array)
 	{
-		*(ptr + i) = *(s + i);
-		i++;
+		printf("%s\n", *str_array);
+		free(*str_array);
+		*str_array = NULL;
+		str_array++;
 	}
-	*(ptr + i) = '\0';
-	return (ptr);
 }
